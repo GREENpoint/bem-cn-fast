@@ -8,6 +8,14 @@
   },
   "author": "Vitaliy Green",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "bem"
+  ],
+  "repository" : {
+    "type": "git",
+    "url": "git+https://github.com/GREENpoint/bem-cn-fast.git"
+  },
   "bugs": {
     "url": "https://github.com/GREENpoint/bem-cn-fast/issues"
   },
