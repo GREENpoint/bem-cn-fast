@@ -9,10 +9,9 @@ Usage
 -----
 
 ```javascript
-import bemCn from 'fast-bem-cn';
+import bemCn from 'bem-cn-fast';
 const b = bemCn('block');
 
-b; // -> 'block'
 b(); // -> 'block'
 b('element'); // -> 'block__element'
 b({ mod1: true, mod2: 'some-value' }); // -> 'block_mod1 block_mod2_some-value'
