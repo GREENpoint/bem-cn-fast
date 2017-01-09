@@ -1,6 +1,6 @@
 {
   "name": "bem-cn-fast",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fast BEM class name generator",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "react",
     "bem"
   ],
-  "repository" : {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/GREENpoint/bem-cn-fast.git"
   },
