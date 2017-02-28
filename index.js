@@ -21,7 +21,7 @@ module.exports = function bem(componentName) {
             return componentName;
         }
 
-        let element;
+        var element;
 
         if (typeof elementOrMods === 'string') {
             element = elementOrMods;
@@ -39,7 +39,7 @@ module.exports = function bem(componentName) {
             }
         }
 
-        let base = componentName;
+        var base = componentName;
         if (element) {
             base += '__' + element;
         }
@@ -47,7 +47,7 @@ module.exports = function bem(componentName) {
         return base + (
             mods
                 ? Object.keys(mods).reduce(function (result, name) {
-                    let value = mods[name];
+                    var value = mods[name];
 
                     if (value) {
                         result += ' ' + (

@@ -5,31 +5,31 @@ const expect = require('chai').expect;
 
 describe('bem-cn', function () {
     it('should return block css-class without arguments', function () {
-        let b = bem('block-name');
+        var b = bem('block-name');
         expect(b()).to.be.equal('block-name');
     });
 
     it('should return element css-class with `element` argument', function () {
-        let b = bem('block-name');
+        var b = bem('block-name');
         expect(b('element-name')).to.be.equal('block-name__element-name');
     });
 
     it('should return block with mod css-class with `mods` argument', function () {
-        let b = bem('block-name');
+        var b = bem('block-name');
         expect(b({
             'some-mod': 'visible'
         })).to.be.equal('block-name block-name_some-mod_visible');
     });
 
     it('should return block with mod css-class with `mods` argument (Boolean mod)', function () {
-        let b = bem('block-name');
+        var b = bem('block-name');
         expect(b({
             'some-mod': true
         })).to.be.equal('block-name block-name_some-mod');
     });
 
     it('should return block without mod css-class with `mods` argument and empty mods values', function () {
-        let b = bem('block-name');
+        var b = bem('block-name');
         expect(b({
             'some-mod': false,
             'some-mode2': undefined,
@@ -39,7 +39,7 @@ describe('bem-cn', function () {
     });
 
     it('should return element with mods css-classes with `element` and `mods` arguments', function () {
-        let b = bem('block-name');
+        var b = bem('block-name');
         expect(b(
             'element-name',
             {
