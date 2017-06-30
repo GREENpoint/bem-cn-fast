@@ -50,4 +50,14 @@ describe('bem-cn', function () {
             'block-name__element-name block-name__element-name_some-mod_visible block-name__element-name_some-mod2'
         );
     });
+
+    it('sould convert camelCase to dashed-style', () => {
+        var b = bem('block-name');
+        expect(b({
+            someMod: 'visible',
+            someMod2: true
+        })).to.be.equal(
+            'block-name block-name_some-mod_visible block-name_some-mod2'
+        )
+    })
 });

@@ -48,12 +48,13 @@ module.exports = function bem(componentName) {
             mods
                 ? Object.keys(mods).reduce(function (result, name) {
                     var value = mods[name];
+                    var dashedName = name.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()
 
                     if (value) {
                         result += ' ' + (
                             typeof value === 'boolean'
-                                ? (base + '_' + name)
-                                : (base + '_' + name + '_' + value)
+                                ? (base + '_' + dashedName)
+                                : (base + '_' + dashedName + '_' + value)
                         );
                     }
 
