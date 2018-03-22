@@ -13,10 +13,21 @@
  * Returns BEM class name factory.
  *
  * @param {String} componentName Block name
+ * @param {Object} [customDelimeters={}] Custom delimiters
  * @returns {BemCn}
  */
-module.exports = function bem(componentName) {
-    return function (elementOrMods, mods) {
+module.exports = function bem(componentName, customDelimiters = {}) {
+
+    const defaultDelimiters = {
+        el: '__',
+        mod: '_',
+        modValue: '_'
+    };
+
+    const delimiters = Object.assign({}, defaultDelimiters, customDelimiters);
+
+    return function (elementOrMods, mods) {       
+
         if (!elementOrMods) {
             return componentName;
         }
@@ -41,7 +52,7 @@ module.exports = function bem(componentName) {
 
         var base = componentName;
         if (element) {
-            base += '__' + element;
+            base += delimiters['el'] + element;
         }
 
         return base + (
@@ -52,8 +63,8 @@ module.exports = function bem(componentName) {
                     if (value) {
                         result += ' ' + (
                             typeof value === 'boolean'
-                                ? (base + '_' + name)
-                                : (base + '_' + name + '_' + value)
+                                ? (base + delimiters['mod'] + name)
+                                : (base + delimiters['mod'] + name + delimiters['modValue'] + value)
                         );
                     }
 
