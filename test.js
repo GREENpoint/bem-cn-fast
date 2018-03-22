@@ -50,4 +50,24 @@ describe('bem-cn', function () {
             'block-name__element-name block-name__element-name_some-mod_visible block-name__element-name_some-mod2'
         );
     });
+
+    it('should return element css-class with `element` argument and custom delimiter `~~`', function () {
+        var b = bem('block-name', {'el': '~~'});
+        expect(b('element-name')).to.be.equal('block-name~~element-name');
+    });
+
+    it('should return block with mod css-class with `mods` argument and custom delimiter for mod `--`', function () {
+        var b = bem('block-name', {'mod': '--'});
+        expect(b({
+            'some-mod': 'visible'
+        })).to.be.equal('block-name block-name--some-mod_visible');
+    });
+
+    it('should return block with mod css-class with `mods` argument and custom delimiter for mod value `-`', function () {
+        var b = bem('block-name', {'modValue': '-'});
+        expect(b({
+            'some-mod': 'visible'
+        })).to.be.equal('block-name block-name_some-mod-visible');
+    });
+
 });

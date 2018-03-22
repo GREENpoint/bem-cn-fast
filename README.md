@@ -18,6 +18,16 @@ b({ mod1: true, mod2: 'some-value' }); // -> 'block_mod1 block_mod2_some-value'
 b('element', { mod1: true }); // -> 'block__element_mod1'
 ```
 
+Custom delimiters
+-----
+```javascript
+import bemCn from 'bem-cn-fast';
+const b = bemCn('block', {'el': '~~', 'mod':'--', 'modValue':'-'});
+
+b({ mod1: true, mod2: 'some-value' }); // -> 'block--mod1 block--mod2-some-value'
+b('element', { mod1: true }); // -> 'block~~element--mod1'
+```
+
 License
 -------
 
